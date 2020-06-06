@@ -7,6 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node bin/brain-games.js"
   },
+  "bin": {
+    "brain-games": "bin/brain-games.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bezprobeloff/frontend-project-lvl1.git"
@@ -17,5 +20,14 @@
     "url": "https://github.com/bezprobeloff/frontend-project-lvl1/issues"
   },
   "homepage": "https://github.com/bezprobeloff/frontend-project-lvl1#readme",
-  "type": "module"
+  "type": "module",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.20.0",
+    "eslint-plugin-react-hooks": "^2.5.1"
+  }
 }
