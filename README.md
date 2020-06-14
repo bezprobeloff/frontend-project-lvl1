@@ -5,6 +5,14 @@
 
 Проект Игры разума
 
-Установка make install
+Установка 
+```sh
+$ make install
+```
 [![asciicast](https://asciinema.org/a/339552.svg)](https://asciinema.org/a/339552)
 
+Запуск игры
+```sh
+$ make brain-even
+```
+[![asciicast](https://asciinema.org/a/KuE2HIaX8GQlEBGVrfeqZsKlf.svg)](https://asciinema.org/a/KuE2HIaX8GQlEBGVrfeqZsKlf)
