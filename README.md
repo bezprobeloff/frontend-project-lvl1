@@ -5,3 +5,6 @@
 
 Проект Игры разума
 
+Установка make install
+[![asciicast](https://asciinema.org/a/339552.svg)](https://asciinema.org/a/339552)
+
