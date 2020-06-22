@@ -9,9 +9,9 @@ const getRandomInt = (max) => Math.floor(Math.random() * Math.floor(max));
 
 console.log('Welcome to the Brain Games!');
 const name = printName();
+console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
 for (let i = 0; i < NUMBER_OF_STEPS; i += 1) {
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
   const number = getRandomInt(MAX_NUMBER);
   const trueAnswer = number % 2 === 0 ? 'yes' : 'no';
   console.log(`Question: ${number}`);

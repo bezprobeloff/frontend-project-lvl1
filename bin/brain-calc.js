@@ -5,8 +5,9 @@ import printName from '../src/cli.js';
 
 const name = printName();
 
+console.log('What is the result of the expression?');
+
 for (let i = 0; i < NUMBER_OF_STEPS; i += 1) {
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
   const number1 = getRandomInt();
   const number2 = getRandomInt();
   const operation = getRandomOperation();
@@ -20,8 +21,5 @@ for (let i = 0; i < NUMBER_OF_STEPS; i += 1) {
     break;
   }
 }
-//What is the result of the expression?
-//  Question: 4 + 10
-//Your answer: 145
-//"145" is wrong answer ;(. Correct answer was "175".
- // Let's try again, Sam!
+
+console.log(`Congratulations, ${name}!`);
