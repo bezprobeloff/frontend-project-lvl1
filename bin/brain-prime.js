@@ -1,18 +1,17 @@
 #!usr/bin/env node
 import readlineSync from 'readline-sync';
-import { NUMBER_OF_STEPS, getRandomInt, getRandomOperation, calc } from '../src/common.js';
+import { NUMBER_OF_STEPS, getRandomInt, isPrime } from '../src/common.js';
 import printName from '../src/cli.js';
 
 const name = printName();
 
-console.log('What is the result of the expression?');
+console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
 
 for (let i = 0; i < NUMBER_OF_STEPS; i += 1) {
-  const number1 = getRandomInt();
-  const number2 = getRandomInt();
-  const operation = getRandomOperation();
-  const trueAnswer = calc(number1, number2, operation).toString();
-  console.log(`Question: ${number1} ${operation} ${number2}`);
+  const number = getRandomInt();
+  const trueAnswer = isPrime(number) ? 'yes' : 'no';
+
+  console.log(`Question: ${number}`);
   const answer = readlineSync.question('Your answer: ');
   if (trueAnswer === answer) {
     console.log('Correct!');

@@ -1,5 +1,6 @@
 const NUMBER_OF_STEPS = 3;
 const MAX_NUMBER = 100;
+const MAX_NUMBER_PROGRESSION = 10;
 const OPERATIONS = ['+', '-', '*'];
 
 const getRandomInt = (max = MAX_NUMBER) => Math.floor(Math.random() * Math.floor(max));
@@ -24,9 +25,44 @@ const calc = (item1, item2, operation) => {
   }
 };
 
+const NOD = (x, y) => {
+  if (y > x) {
+    return NOD(y, x);
+  }
+
+  if (!y) {
+    return x;
+  }
+
+  return NOD(y, x % y);
+};
+
+const arithProgression = (number, step) => {
+  const arithProgressionList = [];
+  for (let i = 1; i <= MAX_NUMBER_PROGRESSION; i += 1) {
+    const numberProgression = number + (i - 1) * step;
+    arithProgressionList.push(numberProgression);
+  }
+
+  return arithProgressionList;
+};
+
+const isPrime = (number) => {
+  for (let i = 2; i < number; i += 1) {
+    if (number % i === 0) {
+      return false;
+    }
+  }
+
+  return number > 1;
+};
+
 export {
   NUMBER_OF_STEPS,
   getRandomInt,
   getRandomOperation,
   calc,
+  NOD,
+  arithProgression,
+  isPrime,
 };
