@@ -1,6 +1,10 @@
-import { getRandomInt } from '../src/common.js';
+import { getRandomInt } from '../common.js';
 
-const arithProgression = (number, step) => {
+const MAX_NUMBER_PROGRESSION = 10;
+const MAX_NUMBER_STEP = 10;
+const MAX_NUMBER_BASE = 5;
+
+const arithmeticProgression = (number, step) => {
   const arithProgressionList = [];
   for (let i = 1; i <= MAX_NUMBER_PROGRESSION; i += 1) {
     const numberProgression = number + (i - 1) * step;
@@ -10,12 +14,16 @@ const arithProgression = (number, step) => {
   return arithProgressionList;
 };
 
-
-  const numberBase = getRandomInt(5);
-  const step = getRandomInt(10);
-  const progressionList = arithProgression(numberBase, step);
+const generateProgression = () => {
+  const numberBase = getRandomInt(MAX_NUMBER_BASE);
+  const step = getRandomInt(MAX_NUMBER_STEP);
+  const progressionList = arithmeticProgression(numberBase, step);
   const index = getRandomInt(progressionList.length - 1);
   const trueAnswer = progressionList[index].toString();
   progressionList[index] = '..';
-  console.log(`Question: ${progressionList.join(' ')}`);
+  const textQuestion = `${progressionList.join(' ')}`;
 
+  return [textQuestion, trueAnswer];
+};
+
+export default generateProgression;

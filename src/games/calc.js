@@ -1,5 +1,10 @@
-import { getRandomInt, getRandomOperation } from '../common.js';
+import { getRandomInt } from '../common.js';
 
+
+const OPERATIONS = ['+', '-', '*'];
+const maxIndexArray = OPERATIONS.length - 1;
+
+const getRandomOperation = () => OPERATIONS[getRandomInt(maxIndexArray)];
 const sum = (item1, item2) => item1 + item2;
 const subtraction = (item1, item2) => item1 - item2;
 const mul = (item1, item2) => item1 * item2;

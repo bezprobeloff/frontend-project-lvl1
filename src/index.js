@@ -34,6 +34,8 @@ const gameStructure = (game) => {
       selectedGame = progression;
       console.log('What number is missing in the progression?');
       break;
+    default:
+      break;
   }
 
   for (let i = 0; i < NUMBER_OF_STEPS; i += 1) {
@@ -42,7 +44,11 @@ const gameStructure = (game) => {
 
     const answer = readlineSync.question('Your answer: ');
     if (trueAnswer === answer) {
-      i === NUMBER_OF_STEPS - 1 ? console.log(`Congratulations, ${name}!`) : console.log('Correct!');
+      if (i === NUMBER_OF_STEPS - 1) {
+        console.log(`Congratulations, ${name}!`);
+      } else {
+        console.log('Correct!');
+      }
     } else {
       console.log(`"${answer}" is wrong answer ;(. Correct answer was "${trueAnswer}".\nLet's try again, ${name}!`);
       break;
