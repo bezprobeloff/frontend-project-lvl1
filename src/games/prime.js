@@ -1,4 +1,3 @@
-#!usr/bin/env node
 import { getRandomInt } from '../common.js';
 
 const isPrime = (number) => {

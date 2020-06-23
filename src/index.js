@@ -1,4 +1,3 @@
-#!usr/bin/env node
 import readlineSync from 'readline-sync';
 import { NUMBER_OF_STEPS } from './common.js';
 import printName from './cli.js';

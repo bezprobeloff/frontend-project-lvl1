@@ -1,6 +1,5 @@
 import { getRandomInt } from '../common.js';
 
-
 const OPERATIONS = ['+', '-', '*'];
 const maxIndexArray = OPERATIONS.length - 1;
 
