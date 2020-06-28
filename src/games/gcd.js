@@ -1,24 +1,31 @@
 import { getRandomInt } from '../common.js';
+import gameStructure from '../index.js';
 
-const NOD = (x, y) => {
+const TASK = 'Find the greatest common divisor of given numbers.';
+
+const calcGCD = (x, y) => {
   if (y > x) {
-    return NOD(y, x);
+    return calcGCD(y, x);
   }
 
   if (!y) {
     return x;
   }
 
-  return NOD(y, x % y);
+  return calcGCD(y, x % y);
 };
 
-const generateGcd = () => {
+const generateGame = () => {
   const number1 = getRandomInt();
   const number2 = getRandomInt();
-  const trueAnswer = NOD(number1, number2).toString();
-  const textQuestion = `${number1} ${number2}`;
+  const trueAnswer = calcGCD(number1, number2).toString();
+  const question = `${number1} ${number2}`;
 
-  return [textQuestion, trueAnswer];
+  return [question, trueAnswer];
 };
 
-export default generateGcd;
+const startGame = () => {
+  gameStructure(generateGame, TASK);
+};
+
+export default startGame;

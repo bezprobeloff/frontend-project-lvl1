@@ -1,21 +1,31 @@
 import { getRandomInt } from '../common.js';
+import gameStructure from '../index.js';
+
+const TASK = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (number) => {
+  if (number < 2) {
+    return false;
+  }
   for (let i = 2; i < number; i += 1) {
     if (number % i === 0) {
       return false;
     }
   }
 
-  return number > 1;
+  return true;
 };
 
-const generatePrime = () => {
+const generateGame = () => {
   const number = getRandomInt();
   const trueAnswer = isPrime(number) ? 'yes' : 'no';
-  const textQuestion = `${number}`;
+  const question = number.toString();
 
-  return [textQuestion, trueAnswer];
+  return [question, trueAnswer];
 };
 
-export default generatePrime;
+const startGame = () => {
+  gameStructure(generateGame, TASK);
+};
+
+export default startGame;

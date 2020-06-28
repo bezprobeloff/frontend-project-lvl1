@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import gameStructure from '../src/index.js';
+import startGame from '../src/games/gcd.js';
 
-gameStructure('gcd');
+startGame();

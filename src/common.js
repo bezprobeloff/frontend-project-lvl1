@@ -1,7 +1,8 @@
 const NUMBER_OF_STEPS = 3;
-const MAX_NUMBER = 100;
+const MIN = 0;
+const MAX = 100;
 
-const getRandomInt = (max = MAX_NUMBER) => Math.floor(Math.random() * Math.floor(max));
+const getRandomInt = (min = MIN, max = MAX) => Math.floor(min + Math.random() * (max + 1 - min));
 
 export {
   NUMBER_OF_STEPS,

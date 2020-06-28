@@ -1,11 +1,18 @@
 import { getRandomInt } from '../common.js';
+import gameStructure from '../index.js';
 
-const generateEven = () => {
+const TASK = 'Answer "yes" if the number is even, otherwise answer "no".';
+
+const generateGame = () => {
   const number = getRandomInt();
   const trueAnswer = number % 2 === 0 ? 'yes' : 'no';
-  const textQuestion = `${number}`;
+  const question = number.toString();
 
-  return [textQuestion, trueAnswer];
+  return [question, trueAnswer];
 };
 
-export default generateEven;
+const startGame = () => {
+  gameStructure(generateGame, TASK);
+};
+
+export default startGame;
