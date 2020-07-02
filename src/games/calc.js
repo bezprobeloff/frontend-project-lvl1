@@ -1,4 +1,4 @@
-import gameStructure from '../index.js';
+import playGame from '../index.js';
 import { getRandomInt } from '../common.js';
 
 const OPERATIONS = ['+', '-', '*'];
@@ -35,7 +35,7 @@ const generateGame = () => {
 };
 
 const startGame = () => {
-  gameStructure(generateGame, TASK);
+  playGame(generateGame, TASK);
 };
 
 export default startGame;

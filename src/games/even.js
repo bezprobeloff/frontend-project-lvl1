@@ -1,5 +1,5 @@
 import { getRandomInt } from '../common.js';
-import gameStructure from '../index.js';
+import playGame from '../index.js';
 
 const TASK = 'Answer "yes" if the number is even, otherwise answer "no".';
 
@@ -12,7 +12,7 @@ const generateGame = () => {
 };
 
 const startGame = () => {
-  gameStructure(generateGame, TASK);
+  playGame(generateGame, TASK);
 };
 
 export default startGame;
